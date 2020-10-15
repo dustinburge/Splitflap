@@ -56,6 +56,12 @@ final class TileView: UIView {
     if let placeholderConfig = placeholderConfiguration, placeholderConfig.placeholderSymbol == symbol {
       digitLabel.text = placeholderConfig.swapSymbol
       digitLabel.textColor = placeholderConfig.placeholderTextColor
+
+      if let placeholderCardColor = placeholderConfig.placeholderCardColor {
+        backgroundColor = placeholderCardColor
+        digitLabel.backgroundColor = placeholderCardColor
+        secondaryLineView.backgroundColor = placeholderCardColor
+      }
     } else {
       digitLabel.text = symbol
       digitLabel.textColor = textColor
